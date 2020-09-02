@@ -20,7 +20,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         tabLayout = findViewById(R.id.tabs)
         viewPager = findViewById(R.id.viewpager)
+
         viewPager!!.adapter = MyAdapter(supportFragmentManager, lifecycle)
+
         TabLayoutMediator(tabLayout!!, viewPager!!) { tab, position ->
             when (position) {
                 0 -> tab.text = "Learning Leaders"
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }.attach()
     }
 
-    private inner class MyAdapter(fm: FragmentManager?, lifecycle: Lifecycle) :
+    private class MyAdapter(fm: FragmentManager?, lifecycle: Lifecycle) :
         FragmentStateAdapter(fm!!, lifecycle) {
         private val intItems = 2
         override fun createFragment(position: Int): Fragment {
