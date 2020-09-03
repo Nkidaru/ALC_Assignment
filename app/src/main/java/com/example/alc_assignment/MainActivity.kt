@@ -1,7 +1,8 @@
 package com.example.alc_assignment
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
@@ -9,6 +10,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,10 +19,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+        setSupportActionBar(toolbar)
         tabLayout = findViewById(R.id.tabs)
         viewPager = findViewById(R.id.viewpager)
 
+        button.setOnClickListener {
+            startActivity(Intent(this, ProjectSubmission::class.java))
+
+        }
         viewPager!!.adapter = MyAdapter(supportFragmentManager, lifecycle)
 
         TabLayoutMediator(tabLayout!!, viewPager!!) { tab, position ->
