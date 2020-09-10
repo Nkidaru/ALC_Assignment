@@ -78,7 +78,7 @@ fun ProjectSubmit(view: View ?) {
 
 
             if (firstName.isNotEmpty() && lastName.isNotEmpty() && emailAdd.isNotEmpty() && githubProjectLink.isNotEmpty()) {
-                FormUrlApi.create().postProject(
+                ProjectSubmissionFormUrlApi.create().postProject(
                     firstName = firstName,
                     lastName = lastName,
                     email = emailAdd,
