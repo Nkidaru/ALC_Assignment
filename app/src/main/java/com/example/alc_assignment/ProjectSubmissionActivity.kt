@@ -56,7 +56,7 @@ private fun openDialog() {
 
 
     dialogView.btn.setOnClickListener {
-
+        hideViews(null)
         ProjectSubmit (null)
         dialog.dismiss()
         Toast.makeText(this, "You agreed", Toast.LENGTH_SHORT).show()
@@ -105,8 +105,9 @@ fun ProjectSubmit(view: View ?) {
                     override fun onFailure(call: Call<Unit>, t: Throwable) {
                         //Do something on failure
                         Log.e("ProjectSubmission", "Error $t")
-                        createErrorDialog().show()
                         hideViews(null)
+                        createErrorDialog().show()
+
                     }
 
                 })

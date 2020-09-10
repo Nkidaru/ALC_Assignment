@@ -53,6 +53,12 @@
         app:layout_constraintTop_toBottomOf="@id/appbar"
 
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/holo_orange_dark"
+        app:layout_constraintTop_toBottomOf="@id/project"/>
 
     <EditText
         android:id="@+id/fname"
@@ -119,7 +125,7 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/submit"
